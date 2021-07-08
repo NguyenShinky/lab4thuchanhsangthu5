@@ -3,6 +3,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -38,10 +39,65 @@ namespace lab4thuchanhsangthu5.Controllers
             ApplicationUser user = System.Web.HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>().FindById(System.Web.HttpContext.Current.User.Identity.GetUserId());
             objCourse.LecturerId = user.Id;
 
-            context.Course.Add(objCourse);
-            context.SaveChanges();
-            return RedirectToAction("Index", "Home");
+            if (ModelState.IsValid)
+            {
+                context.Course.Add(objCourse);
+                context.SaveChanges();
+                return RedirectToAction("Index", "Home");
+            }
+
+
+            ViewBag.IdCategory = new SelectList(context.Category , "Id", "Name", objCourse.CategoryId);
+            return View(objCourse);
         }
+
+
+        public ActionResult Attending()
+        {
+            BigSchoolContext context = new BigSchoolContext();
+            ApplicationUser currentUser = System.Web.HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>()
+                .FindById(System.Web.HttpContext.Current.User.Identity.GetUserId());
+            var listAttendances = context.Attendances.Where(p => p.Attendee == currentUser.Id).ToList();
+            var courses = new List<Course>();
+            foreach (Attendance temp in listAttendances)
+            { 
+                Course objCourse = temp.Course;
+                objCourse.LecturerId = System.Web.HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>()
+                    .FindById(objCourse.LecturerId).Name;
+                courses.Add(objCourse);
+            }
+            return View(courses);
+        }
+
+
+        public ActionResult Mine() 
+        {
+            ApplicationUser currentUser = System.Web.HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>()
+             .FindById(System.Web.HttpContext.Current.User.Identity.GetUserId());
+            BigSchoolContext context = new BigSchoolContext();
+            var course = context.Course.Where(c => c.LecturerId == currentUser.Id && c.DateTime > DateTime.Now).ToList();
+            foreach (Course i in course) 
+            {
+                i.LectureNAme = currentUser.Name;
+            }
+            return View(course);
+        }
+
+        //public ActionResult Edit(int id)
+        //{
+        //    BigSchoolContext context = new BigSchoolContext();
+        //    var userID = User.Identity.GetUserId();
+        //    var course = context.Course.Single(c => c.Id == id && c.LecturerId == userID);
+        //    var viewModel = new CourseViewModel
+        //    {
+        //        categories = context.Category.ToList(),
+        //        Date = course.DateTime.ToString("dd/MM/yyyy"),
+        //        Time = course.DateTime.ToString("HH:mm"),
+        //        Category = course.CategoryId,
+        //        Place = course.Place
+        //    };
+        //    return View("Create", viewModel);
+        //}
+    }
         
     }
-}

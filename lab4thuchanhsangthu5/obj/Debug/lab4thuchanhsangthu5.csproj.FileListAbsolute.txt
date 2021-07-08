@@ -106,3 +106,9 @@ D:\baitap th\lab4thuchanhsangthu5\lab4thuchanhsangthu5\obj\Debug\lab4thuchanhsan
 D:\baitap th\lab4thuchanhsangthu5\lab4thuchanhsangthu5\obj\Debug\lab4thuchanhsangthu5.csproj.CopyComplete
 D:\baitap th\lab4thuchanhsangthu5\lab4thuchanhsangthu5\obj\Debug\lab4thuchanhsangthu5.dll
 D:\baitap th\lab4thuchanhsangthu5\lab4thuchanhsangthu5\obj\Debug\lab4thuchanhsangthu5.pdb
+D:\baitap th\lab4thuchanhsangthu5\lab4thuchanhsangthu5\bin\System.Net.Http.Formatting.dll
+D:\baitap th\lab4thuchanhsangthu5\lab4thuchanhsangthu5\bin\System.Web.Http.dll
+D:\baitap th\lab4thuchanhsangthu5\lab4thuchanhsangthu5\bin\System.Web.Http.WebHost.dll
+D:\baitap th\lab4thuchanhsangthu5\lab4thuchanhsangthu5\bin\System.Net.Http.Formatting.xml
+D:\baitap th\lab4thuchanhsangthu5\lab4thuchanhsangthu5\bin\System.Web.Http.xml
+D:\baitap th\lab4thuchanhsangthu5\lab4thuchanhsangthu5\bin\System.Web.Http.WebHost.xml
