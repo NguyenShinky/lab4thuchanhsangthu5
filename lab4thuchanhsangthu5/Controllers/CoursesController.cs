@@ -4,6 +4,7 @@ using Microsoft.AspNet.Identity.Owin;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -98,6 +99,64 @@ namespace lab4thuchanhsangthu5.Controllers
         //    };
         //    return View("Create", viewModel);
         //}
+        [Authorize]
+        public ActionResult Edit(int id)
+        {
+            BigSchoolContext context = new BigSchoolContext();
+            Course course = context.Course.SingleOrDefault(p => p.Id == id);
+            if (course == null)
+            {
+                return HttpNotFound();
+            }
+            return View(course);
+        }
+
+        [Authorize]
+        [HttpPost]
+
+        public ActionResult Edit(Course course)
+        {
+
+            BigSchoolContext context = new BigSchoolContext();
+            Course courseupdate = context.Course.SingleOrDefault(p => p.Id == course.Id);
+            if (courseupdate != null)
+            {
+                context.Course.AddOrUpdate(course);
+                context.SaveChanges();
+            }
+
+            return RedirectToAction("ListCoure");
+
+        }
+
+
+        public ActionResult Delete(int Id)
+        {
+            using (BigSchoolContext context = new BigSchoolContext())
+            {
+                return View(context.Course.Where(p => p.Id == Id).FirstOrDefault());
+            }
+        }
+
+        [HttpPost]
+        [Authorize]
+        public ActionResult Delete(int Id, FormCollection collection)
+        {
+            try
+            {
+                using (BigSchoolContext context = new BigSchoolContext())
+                {
+                    Course course = context.Course.Where(p => p.Id == Id).FirstOrDefault();
+                    context.Course.Remove(course);
+                    context.SaveChanges();
+                }
+                return RedirectToAction("ListBook");
+            }
+            catch
+            {
+                return View();
+            }
+        }
     }
         
     }

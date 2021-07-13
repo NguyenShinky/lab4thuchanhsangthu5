@@ -29,6 +29,7 @@ namespace lab4thuchanhsangthu5.Models
         public int CategoryId { get; set; }
 
         public String Name;
+        public String LectureNAme;
 
         public virtual Category Category { get; set; }
 
