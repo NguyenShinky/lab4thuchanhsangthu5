@@ -101,7 +101,6 @@ D:\baitap th\lab4thuchanhsangthu5\lab4thuchanhsangthu5\bin\Microsoft.Owin.Securi
 D:\baitap th\lab4thuchanhsangthu5\lab4thuchanhsangthu5\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 D:\baitap th\lab4thuchanhsangthu5\lab4thuchanhsangthu5\bin\Microsoft.Owin.Security.OAuth.xml
 D:\baitap th\lab4thuchanhsangthu5\lab4thuchanhsangthu5\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\baitap th\lab4thuchanhsangthu5\lab4thuchanhsangthu5\obj\Debug\lab4thuchanhsangthu5.csproj.AssemblyReference.cache
 D:\baitap th\lab4thuchanhsangthu5\lab4thuchanhsangthu5\obj\Debug\lab4thuchanhsangthu5.csproj.CoreCompileInputs.cache
 D:\baitap th\lab4thuchanhsangthu5\lab4thuchanhsangthu5\obj\Debug\lab4thuchanhsangthu5.csproj.CopyComplete
 D:\baitap th\lab4thuchanhsangthu5\lab4thuchanhsangthu5\obj\Debug\lab4thuchanhsangthu5.dll
@@ -112,3 +111,4 @@ D:\baitap th\lab4thuchanhsangthu5\lab4thuchanhsangthu5\bin\System.Web.Http.WebHo
 D:\baitap th\lab4thuchanhsangthu5\lab4thuchanhsangthu5\bin\System.Net.Http.Formatting.xml
 D:\baitap th\lab4thuchanhsangthu5\lab4thuchanhsangthu5\bin\System.Web.Http.xml
 D:\baitap th\lab4thuchanhsangthu5\lab4thuchanhsangthu5\bin\System.Web.Http.WebHost.xml
+D:\baitap th\lab4thuchanhsangthu5\lab4thuchanhsangthu5\obj\Debug\lab4thuchanhsangthu5.csproj.AssemblyReference.cache
